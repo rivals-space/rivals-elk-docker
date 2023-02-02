@@ -1,0 +1,36 @@
+Subject: [PATCH] run as non root user
+---
+Index: components/user/UserSignIn.vue
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/components/user/UserSignIn.vue b/components/user/UserSignIn.vue
+--- a/components/user/UserSignIn.vue	(revision b39704c085a9389d251f34e6cabdbbb414640365)
++++ b/components/user/UserSignIn.vue	(date 1675368339396)
+@@ -3,7 +3,7 @@
+ import { $fetch } from 'ofetch'
+
+ const input = $ref<HTMLInputElement>()
+-let server = $ref<string>('')
++let server = $ref<string>('rivals.space')
+ let busy = $ref<boolean>(false)
+ let error = $ref<boolean>(false)
+ let displayError = $ref<boolean>(false)
+Index: nuxt.config.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/nuxt.config.ts b/nuxt.config.ts
+--- a/nuxt.config.ts	(revision b39704c085a9389d251f34e6cabdbbb414640365)
++++ b/nuxt.config.ts	(date 1675367389660)
+@@ -99,7 +99,7 @@
+       // We use LibreTranslate(https://github.com/LibreTranslate/LibreTranslate) as our default translation server #76
+       translateApi: '',
+       // Use the instance where Elk has its Mastodon account as the default
+-      defaultServer: 'm.webtoo.ls',
++      defaultServer: 'rivals.space',
+     },
+     storage: {
+       driver: isCI ? 'cloudflare' : 'fs',
