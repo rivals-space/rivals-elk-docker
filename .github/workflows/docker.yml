@@ -43,6 +43,6 @@ jobs:
           tags: ${{ steps.metal.outputs.tags }}
           labels: ${{ steps.metal.outputs.labels }}
           build-args: |
-            ELK_VERSION=0.7.2
+            ELK_VERSION=0.7.5
           cache-from: type=gha
           cache-to: type=gha,mode=max

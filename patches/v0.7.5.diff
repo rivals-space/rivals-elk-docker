@@ -1,0 +1,34 @@
+Index: components/user/UserSignIn.vue
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/components/user/UserSignIn.vue b/components/user/UserSignIn.vue
+--- a/components/user/UserSignIn.vue	(revision c76e8e8f5eb27d3f24e0359a532809adaeb463ac)
++++ b/components/user/UserSignIn.vue	(date 1678309562264)
+@@ -8,6 +8,8 @@
+
+ const { busy, error, displayError, server, oauth } = useSignIn(input)
+
++server.value = 'rivals.space'
++
+ let fuse = $shallowRef(new Fuse([] as string[]))
+
+ const filteredServers = $computed(() => {
+Index: nuxt.config.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/nuxt.config.ts b/nuxt.config.ts
+--- a/nuxt.config.ts	(revision c76e8e8f5eb27d3f24e0359a532809adaeb463ac)
++++ b/nuxt.config.ts	(date 1678309371694)
+@@ -97,7 +97,7 @@
+       // our default translation server #76
+       translateApi: '',
+       // Use the instance where Elk has its Mastodon account as the default
+-      defaultServer: 'm.webtoo.ls',
++      defaultServer: 'rivals.space',
+       singleInstance: false,
+     },
+     storage: {
